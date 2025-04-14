@@ -40,3 +40,12 @@ let score = 0;
 
 //Initializing time
 let time = 10;
+
+
+//addWord Function
+function addWord() {
+  randomWord = words[Math.floor(Math.random() * words.length)];
+  word.textContent = randomWord;
+}
+
+addWord();
