@@ -32,14 +32,12 @@ const words = [
   "north",
 ];
 
-//Initializing word
+
 let randomWord;
-
-//Initializing score
 let score = 0;
-
-//Initializing time
 let time = 10;
+
+
 
 
 //addWord Function
@@ -49,3 +47,35 @@ function addWord() {
 }
 
 addWord();
+
+//updateScore function
+function updateScore() {
+  score++;
+  scoreEl.textContent = score;
+}
+
+// Listen for user input
+text.addEventListener("input", function() {
+  if (text.value === randomWord) {
+    updateScore();   
+    addWord();       
+    text.value = ""; 
+    time += 5;
+  }
+});
+
+//updateTime function
+function updateTime() {
+  if (time > 0) {
+    time--;
+    timeEl.textContent = time;
+  } 
+  else {
+    alert("GAME OVER");
+    time = 1;
+    location.reload();
+  }
+}
+
+// timer
+let timer = setInterval(updateTime, 1000);
