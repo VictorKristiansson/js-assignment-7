@@ -71,7 +71,7 @@ function updateTime() {
     timeEl.textContent = time;
   } 
   else {
-    alert("GAME OVER");
+    alert(`⏰ Time's up! Final Score: ${score} 🏆`);
     time = 1;
     location.reload();
   }
